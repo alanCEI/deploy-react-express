@@ -35,13 +35,13 @@ function App() {
     fetchStudents();
   }, []);
 
-  // Manejador para cambios en los inputs del formulario
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setNewStudent({ ...newStudent, [name]: value });
   };
 
-  // Manejador para el envío del formulario
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!newStudent.name || !newStudent.age || !newStudent.carrera) {
@@ -53,11 +53,11 @@ function App() {
       setFormError(null);
       const studentData = {
         ...newStudent,
-        age: parseInt(newStudent.age) // Asegurarse de que la edad es un número
+        age: parseInt(newStudent.age) 
       };
       const response = await createStudent(studentData);
       
-      // Agrega el nuevo estudiante a la lista y limpia el formulario
+ 
       setStudents([...students, response.data]);
       setNewStudent({ name: '', age: '', carrera: '', foto: '' });
 
