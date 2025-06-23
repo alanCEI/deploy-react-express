@@ -1,0 +1,39 @@
+### PRUEBAS
+
+# URL base de la API
+@api_url = http://localhost:4000/api
+
+# ---------------------------------------------------
+
+### Test 1: Obtener todos los estudiantes
+# @name getStudents
+GET {{api_url}}/students
+Content-Type: application/json
+
+### ---------------------------------------------------
+
+### Test 2: Crear un nuevo estudiante
+# @name createStudent
+POST {{api_url}}/students
+Content-Type: application/json
+
+{
+  "name": "Juan Perez",
+  "age": 28,
+  "carrera": "Derecho",
+  "foto": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+}
+
+### ---------------------------------------------------
+
+### Test 3: Crear un estudiante sin foto (opcional)
+# @name createStudentNoPhoto
+POST {{api_url}}/students
+Content-Type: application/json
+
+{
+  "name": "Sofia Castillo",
+  "age": 25,
+  "carrera": "Nutrición"
+}
+
